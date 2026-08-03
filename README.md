@@ -17,9 +17,9 @@
 </p>
 
 <p align="center">
-  <a href="https://neurosense-ai-pd.onrender.com"><img src="https://img.shields.io/badge/🚀%20Backend%20API-Live-brightgreen?style=for-the-badge" /></a>
-  <a href="https://github.com/SuhasGowda24/ML-CNN-PD-Prediction"><img src="https://img.shields.io/badge/🧠%20CNN%20Model-Repo-orange?style=for-the-badge" /></a>
-  <a href="https://github.com/SuhasGowda24/ML-Classification-PD-Prediction"><img src="https://img.shields.io/badge/📈%20Classification%20Model-Repo-orange?style=for-the-badge" /></a>
+  <a href="https://neurosense-ai-pd.onrender.com"><img src="https://img.shields.io/badge/Backend%20API-Live-brightgreen?style=for-the-badge&logo=render&logoColor=white" /></a>
+  <a href="https://github.com/SuhasGowda24/ML-CNN-PD-Prediction"><img src="https://img.shields.io/badge/CNN%20Model-Repo-orange?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <a href="https://github.com/SuhasGowda24/ML-Classification-PD-Prediction"><img src="https://img.shields.io/badge/Classification%20Model-Repo-orange?style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
 
 ---
@@ -186,8 +186,8 @@ cd frontend && npm start      # http://localhost:3000
 ---
 
 ## Related Repositories
-- 🧠 [CNN Model — Image-based PD Prediction](https://github.com/SuhasGowda24/ML-CNN-PD-Prediction)
-- 📈 [Classification Model — Signal-based PD Prediction](https://github.com/SuhasGowda24/ML-Classification-PD-Prediction)
+- [CNN Model — Image-based PD Prediction](https://github.com/SuhasGowda24/ML-CNN-PD-Prediction)
+- [Classification Model — Signal-based PD Prediction](https://github.com/SuhasGowda24/ML-Classification-PD-Prediction)
 
 ---
 
