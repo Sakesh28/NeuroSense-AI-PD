@@ -78,13 +78,11 @@ Both models are deployed as Hugging Face Spaces and are called directly from thi
 - **AI Assessment** — upload or capture a handwriting image for CNN-based screening (webcam supported)
 - Symptom tracking, medication schedule & reminders, exercise recommendations
 - Health journey timeline, progress charts (Recharts)
-- PDF report generation (jsPDF / html2pdf / Puppeteer) for sharing with a doctor
+- PDF report generation for sharing with a doctor
 - Caregiver view, community section, live chat, and a global map of care resources
-- Multi-language support (i18next)
-- Real-time updates via Socket.IO
 
 ### Admin
-- Analytics dashboard and model performance monitoring
+- Analytics dashboard
 - User & dataset management
 - Feedback management and system logs
 - Per-patient reports
