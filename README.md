@@ -91,9 +91,9 @@ Both models are deployed as Hugging Face Spaces and are called directly from thi
 
 ## Tech Stack
 
-**Frontend:** React 19, React Router, Tailwind CSS, Framer Motion, Recharts, Leaflet, Socket.IO Client, Axios, TanStack Query
+**Frontend:** React 19, React Router, Tailwind CSS
 
-**Backend:** Node.js, Express 5, MongoDB (Mongoose), JWT auth, Cloudinary, Multer, Socket.IO, Puppeteer
+**Backend:** Node.js, Express 5, MongoDB (Mongoose), Cloudinary
 
 **ML:** EfficientNetB0 CNN + a feature-based classifier, both served as Hugging Face Spaces
 
