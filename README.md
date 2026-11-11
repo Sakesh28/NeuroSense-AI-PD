@@ -37,6 +37,63 @@ the day-to-day patient experience, and calls out to the models below whenever a 
 
 Both models are deployed as Hugging Face Spaces and are called directly from this app's backend/frontend over REST.
 
+### CNN Model WorkFlow
+We have used pre-trained mode where this model can recognize  and extract the features.(like a human brain where it can differentiate among different shapes ,lines and colors).
+
+To increase the efficiency of the model , data augmentation is done. During training, the Model never sees the exact same image twice. For every batch of 16 images, the system randomly:
+
+- Rotates the drawing left or right.
+
+- Zooms in and out.
+
+- Flips the image horizontally.
+
+By doing this, the model can’t just memorize a specific picture. It is forced to learn the actual patterns of Parkinson's like subtle line tremors (fuzziness), variations in line thickness, and irregular gaps between the spiral loops.
+
+We set the model to train for 50 epochs (50 full rounds of learning) to ensure it extracts as much detail as possible. However, to prevent overfitting (where the model becomes too obsessed with the training data and fails in the real world), we use Early Stopping. This acts like a referee that stops the training the moment the model's performance on new data stops improving,  and ensuring we keep the "best version" of the Model.
+
+
+Instead of just model gives a result without explanation. By integrating Grad-CAM Heatmaps, we provide Transparency.
+
+The system generates a colored overlay on top of the original drawing:
+
+- Red zones show exactly where the model found the most suspicious tremors or irregularities.
+
+- This helps doctors and users see why the model made its decision.
+
+- It often highlights micro-patterns in the handwriting that are nearly invisible to the naked human eye, building trust and confidence in the result.
+
+### Classification Model WorkFlow
+
+The second model looks at the process and the movement. It captures things a standard camera or the human eye could never see.
+
+Using a digital tablet and stylus, we collect raw signals like the pen's position, pressure, and even the angle of the pen (azimuth/altitude). We then transform these into Kinematic Features:
+
+- Velocity & Acceleration: Parkinson's often causes "bradykinesia" (slowness of movement). The model detects if the drawing speed is unusually slow or inconsistent.
+
+- Jerk (The "Tremor" Metric): This is one of the most important features. "Jerk" measures how smooth the movement is. High "jerk" values indicate the micro-tremors and shakiness typical of PD.
+
+- Pen Lifts & Air-Surface Ratio: This captures "hesitation." The model tracks how much time the patient spends with the pen in the air versus on the paper. Frequent lifting or long pauses can indicate motor planning difficulties.
+
+A key feature here is Pressure. PD patients often struggle with "micrographia" (writing that gets smaller and smaller) or inconsistent pressure because of muscle stiffness. Our model analyzes the Mean, Max, and Standard Deviation of pressure to detect these subtle neurological "stiffness" signatures.
+
+The model is trained with a specialized task of 8 different characters
+Each task tests a different part of the brain's motor control:
+
+- Spirals test continuous coordination.
+
+- Sentences test cognitive-motor transitions (thinking while moving).
+
+- Single letters test fine motor precision.
+
+By having both models, your dashboard becomes a Double-Check System:
+
+- The CNN (Vision): Identifies visual "fuzziness" and irregular gaps in the final image.
+
+- The Kinematic Model (Motion): Identifies the "hidden" tremor (jerk), the slowness (velocity), and the struggle with pressure.
+
+A prediction that isn't just based on a picture, but on the actual physical behavior of the patient. It’s like having a neurologist "watch" the patient draw in super-slow motion through the data.
+
 ---
 
 ## How a screening works
